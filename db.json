@@ -1,0 +1,10 @@
+{
+  "timesheets": [
+    { "id": "1", "week": 1, "dateRange": "1 - 5 January, 2024", "status": "COMPLETED" },
+    { "id": "2", "week": 2, "dateRange": "8 - 12 January, 2024", "status": "COMPLETED" },
+    { "id": "3", "week": 3, "dateRange": "15 - 19 January, 2024", "status": "INCOMPLETE" }
+  ],
+  "tasks": [
+    { "id": "101", "day": "Jan 21", "title": "Homepage Development", "hours": 4, "project": "Project Name" }
+  ]
+}
