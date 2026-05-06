@@ -40,6 +40,7 @@ export const Login = () => {
   });
 
   const handleSubmit = (e) => {
+    if(email === "" || password === "") return
     e.preventDefault();
 
     mutate({
