@@ -1,35 +1,3 @@
-// import { Link } from "react-router-dom";
-
-// export function Header() {
-//   return (
-    // <header className=" w-full bg-[#ffffff] overflow-hidden">
-    //   <div className="w-full flex h-[8.1vh] items-center justify-between">
-    //     <div className="flex items-center gap-x-[1.02vw] ">
-    //       <div className="text-[1.535vw] flex items-center justify-center font-bold tracking-tight w-[7.5vw]">
-    //         ticktock
-    //       </div>
-
-    //       <div className="flex items-center justify-between w-[90vw] gap-x-[1.02vw] ">
-
-    //         <div
-    //           className="text-[0.8957vw] font-medium text-foreground/80 hover:text-foreground"
-    //           //   activeProps={{ className: "text-foreground" }}
-    //           >
-    //           Timesheets
-    //         </div>
-      
-    //     <div className=" text-[0.8957vw] font-medium">
-    //       John Doe
-    //       {/* <ChevronDown className="h-4 w-4" /> */}
-    //     </div>
-    //     </div>
-    //           </div>
-    //   </div>
-    // </header>
-//   );
-// }
-
-
 import React from "react";
 import { Link } from "react-router-dom";
 import {
@@ -54,22 +22,25 @@ const userdata = Cookies.get("userdata")
     navigate("/login");
   }
   return (
-     <header className=" w-full bg-[#ffffff] overflow-hidden">
-      <div className="w-full flex h-[8.1vh] items-center justify-between">
-        <div className="flex items-center gap-x-[1.02vw] ">
-          <div className="text-[1.535vw] flex items-center justify-center font-bold tracking-tight w-[7.5vw]">
-            ticktock
-          </div>
-
-          <div className="flex items-center justify-between w-[90vw] gap-x-[1.02vw] ">
-
-            <div
-              className="text-[0.8957vw] font-medium text-foreground/80 hover:text-foreground"
-              //   activeProps={{ className: "text-foreground" }}
-              >
-              Timesheets
-            </div>
-      
+      <header
+      data-testid="app-header"
+      className="border-b border-slate-200 bg-white relative"
+    >
+      <div className="max-w-[1440px] mx-auto px-8 h-16 flex items-center gap-10">
+        <Link to="/timesheets" data-testid="brand-logo" className="flex items-center">
+          <span className="text-xl font-extrabold tracking-tight">
+            <span className="text-[#000000]">ticktock</span>
+          </span>
+        </Link>
+        <nav className="flex items-center gap-6 text-sm">
+          <Link
+            data-testid="nav-timesheets"
+            to="/timesheets"
+            className="text-slate-700 font-medium hover:text-slate-900 transition-colors"
+          >
+            Timesheets
+          </Link>
+        </nav>
         <div className="ml-auto">
           <DropdownMenu>
             <DropdownMenuTrigger
@@ -95,8 +66,8 @@ const userdata = Cookies.get("userdata")
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        </div>
-              </div>
+        
+            
       </div>
     </header>
          
@@ -109,7 +80,7 @@ const userdata = Cookies.get("userdata")
 export function Footer() {
   return (
     <footer className="rounded-lg bg-[#ffffff] mt-[1.907vh] flex items-center justify-center w-full h-[10.13vh] shadow-[0px_1px_2px_-1px_#0000001A,0px_1px_3px_0px_#0000001A]">
-      <p className="text-center text-[0.8957vw] text-[#6B7280]">
+      <p className="text-center text-sm  text-[#6B7280]">
         © 2024 tentwenty. All rights reserved.
       </p>
     </footer>
